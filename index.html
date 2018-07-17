@@ -13,13 +13,23 @@
     <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
     <script src="assets/javascript/chat.js"></script>
 </head>
+<style>
+
+</style>
 
 <body>
-    <form>
-        <input type="text" name="msg" id="msg">
-        <input type="submit" for="msg" id="send">
-    </form>
-    <div id="msg-box"></div>
+    <div id="overlay">
+        <form>
+            <input type="text" placeholder="pick a username" name="user" id="user">
+            <input type="submit" for="user" id="pick">
+        </form>
+    </div>
+        <form>
+            <input type="text" name="msg" id="msg">
+            <input type="submit" for="msg" id="send">
+        </form>
+        <div id="msg-box"></div>
+
 </body>
 
 </html>

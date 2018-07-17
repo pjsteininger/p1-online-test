@@ -11,12 +11,20 @@ $(document).ready(function () {
     };
     firebase.initializeApp(config);
     var database = firebase.database();
+    var sn = "anon";
+    $("#pick").on("click", function (event) {
+        event.preventDefault();
+        if ($("#user").val()) {
+            sn = $("#user").val();
+        }
+        $("#overlay").css("display", "none");
+    });
     $("#send").on("click", function (event) {
         event.preventDefault();
         if ($("#msg").val()) {
             var msg = $("#msg").val();
             $("#msg").val("");
-            var sn = "anon";                      //TODO: set sn to each username (local storage?)
+            //TODO: set sn to each username (local storage?)
             database.ref().push({
                 name: sn,
                 message: msg,
